@@ -1,14 +1,8 @@
-const Waline = require('@waline/vercel');
-const HelloWorldPlugin = require('@waline-plugins/hello-world');
+const Application = require('@waline/vercel');
 
-module.exports = Waline({
-  plugins: [HelloWorldPlugin],
+module.exports = Application({
+  plugins: [],
   async postSave(comment) {
-    // 真实IP
-  },
-  think: {
-    app: {
-      proxyIpHeader: "CF-Connecting-IP",
-    },
+    // do what ever you want after comment saved
   },
 });
